@@ -1,0 +1,4 @@
+(() => { const modal=document.getElementById('modal'), close=document.getElementById('closeModal'), open=document.querySelector('[data-action="openModal"]'), themeBtn=document.getElementById('themeBtn'); open && open.addEventListener('click',()=> modal.setAttribute('aria-hidden','false')); close && close.addEventListener('click',()=> modal.setAttribute('aria-hidden','true')); window.addEventListener('keydown',e=>{ if(e.key==='Escape') modal.setAttribute('aria-hidden','true')}); if(themeBtn){ let dark=true; themeBtn.addEventListener('click',()=>{ document.documentElement.style.filter= dark?'invert(0)':'invert(1)'; dark=!dark; }); }
+  // populate projects grid with placeholders
+  const grid=document.querySelector('#projects .grid'); if(grid){ for(let i=1;i<=6;i++){ const d=document.createElement('div'); d.className='card'; d.textContent='Project '+i; grid.appendChild(d);} }
+})();
